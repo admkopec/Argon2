@@ -1,5 +1,5 @@
 import XCTest
-@testable import Argon2
+@testable import Argon
 
 final class Argon2Tests: XCTestCase {
     func testHash()throws {

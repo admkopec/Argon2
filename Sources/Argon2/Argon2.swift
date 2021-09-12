@@ -1,5 +1,5 @@
 import Foundation
-import CArgon2
+import argon2
 
 public struct Argon2 {
     

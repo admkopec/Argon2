@@ -1,4 +1,4 @@
-import CArgon2
+import argon2
 import Foundation
 
 extension Argon2 {

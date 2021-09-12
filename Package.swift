@@ -1,17 +1,19 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.5
 
 import PackageDescription
 
 let package = Package(
     name: "Argon2",
     products: [
-        .library(name: "Argon2", targets: ["Argon2"]),
-        .library(name: "CArgon2", targets: ["CArgon2"])
+        .library(name: "Argon2", targets: ["Argon"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/P-H-C/phc-winner-argon2.git", branch: "master"),
+    ],
     targets: [
-        .target(name: "CArgon2", dependencies: [], path: "./Sources/phc-winner-argon2"),
-        .target(name: "Argon2", dependencies: ["CArgon2"]),
-        .testTarget(name: "Argon2Tests", dependencies: ["Argon2"]),
+        .target(name: "Argon", dependencies: [
+            .product(name: "argon2", package: "phc-winner-argon2")
+        ], path: "./Sources/Argon2"),
+        .testTarget(name: "Argon2Tests", dependencies: ["Argon"]),
     ]
 )

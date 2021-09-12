@@ -4,11 +4,9 @@ A Swift wrapper for the [Argon 2 hashing algorithm](https://github.com/P-H-C/phc
 
 ## Libraries
 
-This package has 2 libraries, `Argon2` and `CArgon2`. 
+This package has a single library, `Argon2`, however due to the module name conflicts you should import it in your code simply as `Argon`. 
 
 `Argon2` is the Swift layer over the C functions for hashing and verifying byte arrays. It has methods to handle `String` and more Swift-like configurations. This library does not give you access to the C interface.
-
-`CArgon2` is just the C library wrapped in an SPM package. There is no Swift in this library.
 
 ## Swift API
 
