@@ -1,4 +1,5 @@
 import CArgon2
+import Foundation
 
 extension Argon2 {
     
@@ -34,12 +35,12 @@ extension Argon2 {
         ///   - parallelism:
         ///   - salt:
         ///   - hashLength:
-        public init(mode: HashMode, iterations: UInt32, memory: UInt32, parallelism: UInt32, salt: [UInt8], hashLength: UInt32) {
+        public init<Salt: DataProtocol>(mode: HashMode, iterations: UInt32, memory: UInt32, parallelism: UInt32, salt: Salt, hashLength: UInt32) {
             self.mode = mode
             self.iterations = iterations
             self.memory = memory
             self.parallelism = parallelism
-            self.salt = salt
+            self.salt = Array(salt)
             self.hashLength = hashLength
         }
         
