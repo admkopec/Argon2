@@ -14,7 +14,7 @@ This package has a single library, `Argon2`, however due to the module name conf
 
 The `Argon2.Error` type is used to represent errors that are returned from the underlying hashing and verification functions. It has a `code` property which is the error code of the error returned. You can see a whole list of the possible errors [here](https://github.com/P-H-C/phc-winner-argon2/blob/b31aa322566a8559403d419b2e9cd3f57957e394/include/argon2.h#L100).
 
-The success code of a function is `0`, while all errors are negative numbers. If a positive error code is returned, is was from the Swift API, not the C library.
+The success code of a function is `0`, while all errors are negative numbers. If a positive error code is returned, it was from the Swift API, not the C library.
 
 For an easy PR, you could create static cases for the `Error` struct that match the errors in the C library.
 
